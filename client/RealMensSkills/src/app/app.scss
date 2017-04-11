@@ -14,3 +14,30 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+a {text-decoration: none}
+
+/* POSITIONING */
+
+.pos-absolute {position: absolute}
+
+.pos-bottom {bottom: 0}
+
+.w-100 {width: 100%;}
+
+.mx-auto {margin: 0 auto;}
+
+.mx-1 {margin-left: 1rem;margin-right: 1rem;}
+
+.my-1 {margin-top: 1rem;margin-bottom: 1rem;}
+
+.mb-1 {margin-bottom: 1rem;}
+
+.px-1 {padding-left: 1rem;padding-right: 1rem;}
+
+.py-1 {padding-top: 1rem;padding-bottom: 1rem;}
+
+/* TYPOGRAPHY */
+
+.text-uppercase {text-transform: uppercase;}

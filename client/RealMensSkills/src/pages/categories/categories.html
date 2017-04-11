@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Skills' Categories</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let item of items">
+      <ion-col text-center class="py-1">
+        <img class="mb-1 px-1" src="{{item.categoryImage}}">
+        <a class="text-uppercase" href="#">{{item.categoryName}}</a>
+        <hr>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
