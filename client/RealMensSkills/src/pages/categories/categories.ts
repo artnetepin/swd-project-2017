@@ -3,11 +3,11 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, Content } from 'ionic-angular';
 
 @Component({
-  selector: 'categories',
+  selector: 'page-categories',
   templateUrl: 'categories.html'
 })
 
-export class Categories {
+export class CategoriesPage {
 
   items = [{categoryName: null as string, categoryImage: null as string}]
 

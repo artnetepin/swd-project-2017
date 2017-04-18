@@ -16,22 +16,32 @@
         </ion-col>
         <ion-col text-center col-7>
           <ion-row>
+            <ion-col col-9>
+              <p class="mb-0 text-center font-weight-bold">{{username}}</p>
+            </ion-col>
+            <ion-col col-3>
+              <button ion-button small (click)="logout()" class="h-2 mt-1 px-1">
+                  <ion-icon name="log-out"></ion-icon>
+                </button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
             <ion-col col-4>
-              <p>{{skillCount}}</p>
-              <p class="mb-1">skills</p>
+              <p class="mb-0">{{skillCount}}</p>
+              <p class="mb-1 font-size-md">skills</p>
             </ion-col>
             <ion-col col-4>
-              <p>{{achievementCount}}</p>
-              <p class="mb-1">achievement</p>
+              <p class="mb-0">{{achievementCount}}</p>
+              <p class="mb-1 font-size-md">achievement</p>
             </ion-col>
             <ion-col col-4>
-              <p>{{proofCount}}</p>
-              <p class="mb-1">proofs</p>
+              <p class="mb-0">{{proofCount}}</p>
+              <p class="mb-1 font-size-md">proofs</p>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col>
-              <p no-margin>Level</p>
+              <p no-margin>{{level}}</p>
               <div class="d-flex flex-row justify-content-center">
                 <span class="px-1">1</span>
                 <progress max="100" value="80"></progress>
@@ -63,26 +73,28 @@
         </ion-col>
       </ion-row>
     </div>
-    <p class="mx-auto"><a href="">Achievements ></a></p>
-    <ion-row>
-      <ion-col col-2>
-        <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
-      </ion-col>
-      <ion-col col-2>
-        <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
-      </ion-col>
-      <ion-col col-2>
-        <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
-      </ion-col>
-      <ion-col col-2>
-        <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
-      </ion-col>
-      <ion-col col-2>
-        <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
-      </ion-col>
-      <ion-col col-2>
-        <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
-      </ion-col>
-    </ion-row>
+    <div>
+      <p no-margin class="text-center"><a href="">Achievements ></a></p>
+      <ion-row>
+        <ion-col col-2>
+          <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
+        </ion-col>
+        <ion-col col-2>
+          <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
+        </ion-col>
+        <ion-col col-2>
+          <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
+        </ion-col>
+        <ion-col col-2>
+          <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
+        </ion-col>
+        <ion-col col-2>
+          <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
+        </ion-col>
+        <ion-col col-2>
+          <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
+        </ion-col>
+      </ion-row>
+    </div>
   </ion-grid>
 </ion-content>
