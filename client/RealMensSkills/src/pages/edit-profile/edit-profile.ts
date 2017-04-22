@@ -1,22 +1,21 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AuthService } from '../../providers/auth-service';
+import { LoginPage } from '../login/login';
 
-/*
-  Generated class for the EditProfile page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-edit-profile',
   templateUrl: 'edit-profile.html'
 })
 export class EditProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(private nav: NavController, private auth: AuthService) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EditProfilePage');
+  public logout() {
+    this.auth.logout().subscribe(succ => {
+        this.nav.setRoot(LoginPage)
+    });
   }
 
 }

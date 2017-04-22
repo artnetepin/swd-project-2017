@@ -2,9 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { CategoriesPage } from '../pages/categories/categories';
-import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 import { ProfilePage } from '../pages/profile/profile';
 import { LoginPage } from '../pages/login/login';
 
@@ -14,7 +12,7 @@ import { LoginPage } from '../pages/login/login';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = EditProfilePage;
+  rootPage: any = ProfilePage;
 
   pages: Array<{title: string, component: any}>;
 
