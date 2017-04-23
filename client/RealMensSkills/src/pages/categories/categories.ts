@@ -9,11 +9,11 @@ import { NavController, Content } from 'ionic-angular';
 
 export class CategoriesPage {
 
-  items = [{categoryName: null as string, categoryImage: null as string}]
+  categories = [{categoryName: null as string, categoryImage: null as string}]
 
   constructor(public navCtrl: NavController) {
     for (let x = 0; x < 3; x++) {
-      this.items.push({
+      this.categories.push({
         categoryName : "category",
         categoryImage : "http://www.oamk.fi/docs/logopankki/fi/pysty/logo_vari_300dpi_FI-pysty.jpg"
       });

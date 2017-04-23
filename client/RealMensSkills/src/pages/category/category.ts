@@ -8,8 +8,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class CategoryPage {
 
-  item = {categoryName: 'Valerka', categoryImage: 'https://static.webshopapp.com/shops/035417/files/011178634/valera-logo.jpg'}
+  category = {categoryName: null as string, categoryImage: null as string};
+  skill = {skillName: null as string, skillImage: null as string};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.category.categoryName = 'Category';
+    this.category.categoryImage = 'https://static.webshopapp.com/shops/035417/files/011178634/valera-logo.jpg';
+
+    this.skill.skillName = 'Skill';
+    this.skill.skillImage = 'http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png';
+  }
 
 }

@@ -9,10 +9,11 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row *ngFor="let item of items">
+    <ion-row *ngFor="let category of categories">
       <ion-col text-center class="py-1">
-        <img class="mb-1 px-1" src="{{item.categoryImage}}">
-        <div class="mx-auto"><a class="mx-auto text-uppercase" href="#">{{item.categoryName}}</a></div>
+        <img class="mb-1 px-1" src="{{category.categoryImage}}">
+        <!-- CATGEGORY LINK HERE -->
+        <div class="mx-auto"><a class="mx-auto text-uppercase" href="#">{{category.categoryName}}</a></div>
         <hr>
       </ion-col>
     </ion-row>

@@ -21,30 +21,11 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row *ngFor="let skill of category">
       <ion-col col-4>
-        <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
-        <p class="mt-0 text-center font-weight-bold">Skill</p>
-      </ion-col>
-      <ion-col col-4>
-        <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
-        <p class="mt-0 text-center font-weight-bold">Skill</p>
-      </ion-col>
-      <ion-col col-4>
-        <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
-        <p class="mt-0 text-center font-weight-bold">Skill</p>
-      </ion-col>
-      <ion-col col-4>
-        <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
-        <p class="mt-0 text-center font-weight-bold">Skill</p>
-      </ion-col>
-      <ion-col col-4>
-        <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
-        <p class="mt-0 text-center font-weight-bold">Skill</p>
-      </ion-col>
-      <ion-col col-4>
-        <img class="mw-100" src="http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png" alt="">
-        <p class="mt-0 text-center font-weight-bold">Skill</p>
+        <!-- SKILL LINK -->
+        <a href="#"><img class="mw-100" src="{{skill.skillImage}}" alt=""></a>
+        <p class="mt-0 text-center font-weight-bold">{{skill.skillName}}</p>
       </ion-col>
     </ion-row>
   </ion-grid>
