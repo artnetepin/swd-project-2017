@@ -25,8 +25,8 @@
       <ion-col col-4 *ngFor="let skill of category">
         <!-- SKILL LINK -->
         <a (click)="goToSkill(skill.id, skill.name, skill.image_url)"><img class="mw-100" src="{{skill.image_url}}" alt=""></a>
-        <p class="mt-0 text-center font-weight-bold"><a (click)="goToSkill(skill.id, skill.name, skill.image_url)">{{skill.name}}</a></p>
-        <p class="mt-0 text-center font-weight-bold">{{skill.xp}}</p>
+        <p class="mt-0 mb-1 text-center font-weight-bold"><a (click)="goToSkill(skill.id, skill.name, skill.image_url)">{{skill.name}}</a></p>
+        <p class="mt-0 text-center font-weight-bold">{{skill.xp}}XP</p>
       </ion-col>
     </ion-row>
   </ion-grid>

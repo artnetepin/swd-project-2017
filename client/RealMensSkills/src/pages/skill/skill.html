@@ -10,10 +10,10 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row>
-      <img src="{{skillImage}}">
+    <ion-row class="py-1 border-bottom">
+      <img class="mx-auto" src="{{skillImage}}" style="max-height: 200px;">
     </ion-row>
-    <ion-row *ngFor="let step of steps">
+    <ion-row class="border-bottom py-1" *ngFor="let step of steps">
       <ion-col>
         <img src="{{step.photo_url}}">
       </ion-col>

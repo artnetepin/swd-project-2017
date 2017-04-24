@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { Http, Response } from '@angular/http';
+
 import { NavController } from 'ionic-angular';
+
 import { AuthService } from '../../providers/auth-service';
+
 import { EditProfilePage } from '../edit-profile/edit-profile';
 import { SkillPage } from '../skill/skill';
-import { Http, Response } from '@angular/http';
 
 @Component({
   selector: 'page-profile',
@@ -23,6 +26,7 @@ export class ProfilePage {
   completedSkills: any;
 
   userAchievements: any;
+  userAchievementsName: any;
 
   constructor(private nav: NavController, private auth: AuthService, public http: Http) {
     // GET INFO FROM LOGGED IN USER
@@ -38,11 +42,10 @@ export class ProfilePage {
     this.achievementCount = 2;
     this.proofCount = 1;
 
-    // this.completedSkills = 'http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png';
-
     http.get('https://sheltered-savannah-33614.herokuapp.com/completed_skills/' + this.id).subscribe((res:Response) => this.completedSkills = res.json());
 
-    // this.userAchievements = 'http://aljeel.ly/wp-content/uploads/revslider/slide-home-default/black-white1.png';
+    this.userAchievements = 'http://www.arlenward.com/wordpress/wp-content/uploads/2014/05/achievement-race.jpg';
+    this.userAchievementsName = 'Champion';
   }
 
   public goToEdit() {

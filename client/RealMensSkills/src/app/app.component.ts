@@ -1,7 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { Nav, Platform } from 'ionic-angular';
+
 import { CategoriesPage } from '../pages/categories/categories';
 import { ProfilePage } from '../pages/profile/profile';
 import { LoginPage } from '../pages/login/login';
@@ -22,7 +25,9 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: "All categories", component: CategoriesPage },
-      { title: "Your profile", component: ProfilePage }
+      { title: "Your skills", component: ProfilePage },
+      { title: "Profile", component: ProfilePage },
+      { title: "Achievements", component: ProfilePage }
     ];
 
   }

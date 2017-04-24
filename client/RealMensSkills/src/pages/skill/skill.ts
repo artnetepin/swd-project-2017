@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Http, Response } from '@angular/http';
+
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { AuthService } from '../../providers/auth-service';
 
-import { Http, Response } from '@angular/http';
+import { ProfilePage } from '../profile/profile';
+
 
 @Component({
   selector: 'page-skill',
@@ -20,8 +23,9 @@ export class SkillPage {
   steps: any;
   stepID: any;
 
+  success = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private auth: AuthService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private auth: AuthService, private alertCtrl: AlertController) {
     let info = this.auth.getUserInfo();
     this.userID = info.id;
 
@@ -39,9 +43,36 @@ export class SkillPage {
     this.http.post('https://sheltered-savannah-33614.herokuapp.com/complete_skill/', {userID: userID, skillID: skillID}).map(res => res.json()).subscribe(
       result => {
         let completion = (result.done);
-        if (completion) {alert('Skill completed');} else {alert('Skill is already completed');}
+        let alert = this.alertCtrl.create({
+          title: 'Success',
+          subTitle: 'Skill completed'
+        });
+        if (completion) {
+          this.success = true;
+          this.showPopup('Success', 'Skill completed');
+        } else {
+          this.showPopup('Error', 'Skill has already been completed');
+        }
       }
     );
+  }
+
+  showPopup(title, text) {
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: text,
+      buttons: [
+       {
+         text: 'OK',
+         handler: data => {
+           if (this.success) {
+             this.navCtrl.popToRoot();
+           }
+         }
+       }
+     ]
+    });
+    alert.present();
   }
 
 

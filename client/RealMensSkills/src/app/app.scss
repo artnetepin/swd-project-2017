@@ -15,8 +15,12 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+a {text-decoration: none; color:#3626A7;}
 
-a {text-decoration: none}
+.toolbar-background, .button-default {background-color: #7DC95E;}
+.toolbar-title, .icon-md, .button-default, .button-clear {color: #0D0106;}
+.content, .item {background-color: #FBFBFF;color:#0D0106;}
+ion-img {background: none;}
 
 /*  */
 
@@ -61,7 +65,10 @@ a {text-decoration: none}
 .text-uppercase {text-transform: uppercase;}
 .text-center {text-align: center;}
 
+.font-size-sm {font-size: 0.85rem;}
 .font-size-md {font-size: 1rem;}
 .font-size-lg {font-size: 1.5rem;}
 
 .font-weight-bold {font-weight: bold;}
+
+.border-bottom {border-bottom: 1px solid #0D0106;}

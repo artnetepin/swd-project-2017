@@ -10,7 +10,7 @@
 <ion-content>
   <ion-grid>
     <div class="sticky-footer">
-      <ion-row>
+      <ion-row class="mb-1">
         <ion-col margin-top col-5>
           <img src="{{profileImage}}">
         </ion-col>
@@ -53,9 +53,9 @@
       </ion-row>
       <p no-margin class="text-center text-uppercase font-weight-bold">Completed skills</p>
       <ion-row>
-        <ion-col col-3 *ngFor="let skill of completedSkills">
+        <ion-col class="text-center" col-3 *ngFor="let skill of completedSkills">
           <!-- LINK TO SKILL HERE -->
-          <a (click)="goToSkill(skill.id, skill.name, skill.image_url)"><img class="mw-100" src="{{skill.image_url}}">{{skill.name}}</a>
+          <a class="font-size-md" (click)="goToSkill(skill.id, skill.name, skill.image_url)"><img class="mw-100" src="{{skill.image_url}}">{{skill.name}}</a>
         </ion-col>
       </ion-row>
     </div>
@@ -63,7 +63,8 @@
       <p no-margin class="text-center text-uppercase font-weight-bold">Achievements</p>
       <ion-row>
         <ion-col col-2>
-          <img class="mw-100" src="">
+          <img class="mw-100" src="{{userAchievements}}">
+          <p class="text-center font-size-sm" no-margin>{{userAchievementsName}}</p>
         </ion-col>
       </ion-row>
     </div>
