@@ -1,15 +1,21 @@
+import { Http, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 export class User {
-  name: string;
+  firstname: string;
+  lastname: string;
   email: string;
+  // id: any;
 
-  constructor(name: string, email: string) {
-    this.name = name;
+  constructor(firstname: string, lastname: string, email: string) {
+    this.firstname = firstname;
+    this.lastname = lastname;
     this.email = email;
+    // this.id = id;
   }
+
 }
 
 @Injectable()
@@ -21,9 +27,9 @@ export class AuthService {
       return Observable.throw("Please insert credentials");
     } else {
       return Observable.create(observer => {
-        // At this point make a request to your backend to make a real check!
+
         let access = (credentials.password === "pass" && credentials.email === "email");
-        this.currentUser = new User('Valerka', 'valerka@gmail.com');
+        this.currentUser = new User('Valerka', 'Leontiev', 'valerka@gmail.com');
         observer.next(access);
         observer.complete();
       });

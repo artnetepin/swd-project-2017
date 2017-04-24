@@ -11,9 +11,9 @@
   <ion-grid>
     <ion-row *ngFor="let category of categories">
       <ion-col text-center class="py-1">
-        <img class="mb-1 px-1" src="{{category.categoryImage}}">
+        <img class="mb-1 px-1" src="{{category.image_url}}">
         <!-- CATGEGORY LINK HERE -->
-        <div class="mx-auto"><a class="mx-auto text-uppercase" href="#">{{category.categoryName}}</a></div>
+        <div class="mx-auto"><a class="mx-auto text-uppercase" (click)="goToCategory(category.id, category.name, category.image_url)">{{category.name}}</a></div>
         <hr>
       </ion-col>
     </ion-row>

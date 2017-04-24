@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{item.categoryName}}</ion-title>
+    <ion-title>{{categoryName}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,21 +11,22 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <img class="mb-1 px-1" src="{{item.categoryImage}}">
+        <img class="mb-1 px-1" src="{{categoryImage}}">
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         <div>
-          <p class="text-center text-uppercase font-size-lg font-weight-bold">{{item.categoryName}}</p>
+          <p class="text-center text-uppercase font-size-lg font-weight-bold">{{categoryName}}</p>
         </div>
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let skill of category">
-      <ion-col col-4>
+    <ion-row>
+      <ion-col col-4 *ngFor="let skill of category">
         <!-- SKILL LINK -->
-        <a href="#"><img class="mw-100" src="{{skill.skillImage}}" alt=""></a>
-        <p class="mt-0 text-center font-weight-bold">{{skill.skillName}}</p>
+        <a (click)="goToSkill(skill.id, skill.name, skill.image_url)"><img class="mw-100" src="{{skill.image_url}}" alt=""></a>
+        <p class="mt-0 text-center font-weight-bold"><a (click)="goToSkill(skill.id, skill.name, skill.image_url)">{{skill.name}}</a></p>
+        <p class="mt-0 text-center font-weight-bold">{{skill.xp}}</p>
       </ion-col>
     </ion-row>
   </ion-grid>

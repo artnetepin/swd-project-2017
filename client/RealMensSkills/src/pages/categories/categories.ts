@@ -1,6 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
+import { Http, Response } from '@angular/http';
 
-import { NavController, Content } from 'ionic-angular';
+import { NavController, NavParams, Content } from 'ionic-angular';
+
+import {CategoryPage} from '../category/category';
+
 
 @Component({
   selector: 'page-categories',
@@ -9,15 +13,14 @@ import { NavController, Content } from 'ionic-angular';
 
 export class CategoriesPage {
 
-  categories = [{categoryName: null as string, categoryImage: null as string}]
+  categories : any;
 
-  constructor(public navCtrl: NavController) {
-    for (let x = 0; x < 3; x++) {
-      this.categories.push({
-        categoryName : "category",
-        categoryImage : "http://www.oamk.fi/docs/logopankki/fi/pysty/logo_vari_300dpi_FI-pysty.jpg"
-      });
-    }
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams) {
+    http.get('https://sheltered-savannah-33614.herokuapp.com/categories').subscribe((res:Response) => this.categories = res.json());
+  }
+
+  public goToCategory(id, name, image_url) {
+    this.navCtrl.push(CategoryPage, {pageID: id, name: name, image_url: image_url});
   }
 
   @ViewChild(Content) content: Content;
