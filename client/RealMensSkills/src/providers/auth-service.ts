@@ -33,7 +33,6 @@ export class AuthService {
   }
   else {
     return Observable.create(observer => {
-      // At this point make a request to your backend to make a real check!
       let url = 'https://sheltered-savannah-33614.herokuapp.com/login';
       this.http.post(url, credentials).map(res => res.json()).subscribe(
         user => {
@@ -48,13 +47,25 @@ export class AuthService {
 }
 
   public register(credentials) {
-    if (credentials.login === null || credentials.password === null) {
+    if (credentials.login === null || credentials.password === null || credentials.name === null) {
       return Observable.throw("Please insert credentials");
     } else {
       // At this point store the credentials to your backend!
       return Observable.create(observer => {
-        observer.next(true);
-        observer.complete();
+        let url = 'https://sheltered-savannah-33614.herokuapp.com/add_user';
+        this.http.post(url, credentials).map(res => res.json()).subscribe(
+          result => {
+            let register = (result.done);
+            if (register) {
+              // alert('Account created');
+              observer.next(true);
+              observer.complete();
+            } else {
+              alert('Error occured');
+              observer.next(false);
+            }
+          }
+        );
       });
     }
   }

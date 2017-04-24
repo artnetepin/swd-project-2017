@@ -17,7 +17,7 @@
         <ion-col text-center col-7>
           <ion-row>
             <ion-col col-9>
-              <p class="mb-0 text-center font-weight-bold">{{username}}</p>
+              <p class="mb-0 text-center font-weight-bold">{{name}}</p>
             </ion-col>
             <ion-col col-3>
               <button ion-button small (click)="goToEdit()" class="h-2 mt-1 px-1">
@@ -41,29 +41,29 @@
           </ion-row>
           <ion-row>
             <ion-col>
-              <p no-margin>{{level}}</p>
+              <p no-margin>Daddy</p>
               <div class="d-flex flex-row justify-content-center">
-                <span class="px-1">1</span>
+                <span class="px-1">{{level}}</span>
                 <progress max="100" value="80"></progress>
-                <span class="px-1">2</span>
+                <span class="px-1">{{level + 1}}</span>
               </div>
             </ion-col>
           </ion-row>
         </ion-col>
       </ion-row>
       <p no-margin class="text-center text-uppercase font-weight-bold">Completed skills</p>
-      <ion-row *ngFor="let skill of completedSkills">
-        <ion-col col-3>
+      <ion-row>
+        <ion-col col-3 *ngFor="let skill of completedSkills">
           <!-- LINK TO SKILL HERE -->
-          <a href="#"><img class="mw-100" src="{{skill.completedSkillImage}}"></a>
+          <a (click)="goToSkill(skill.id, skill.name, skill.image_url)"><img class="mw-100" src="{{skill.image_url}}">{{skill.name}}</a>
         </ion-col>
       </ion-row>
     </div>
     <div>
       <p no-margin class="text-center text-uppercase font-weight-bold">Achievements</p>
-      <ion-row *ngFor="let achievement of userAchievements">
+      <ion-row>
         <ion-col col-2>
-          <img class="mw-100" src="{{achievement.achievementImage}}">
+          <img class="mw-100" src="">
         </ion-col>
       </ion-row>
     </div>

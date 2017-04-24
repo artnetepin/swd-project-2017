@@ -8,7 +8,7 @@ import { AuthService } from '../../providers/auth-service';
 })
 export class RegisterPage {
   createSuccess = false;
-  registerCredentials = {login: '', password: ''};
+  registerCredentials = {login: '', password: '', name: ''};
 
   constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController) {}
 
@@ -25,7 +25,7 @@ export class RegisterPage {
       this.showPopup("Error", error);
     });
   }
-  
+
   showPopup(title, text) {
     let alert = this.alertCtrl.create({
       title: title,

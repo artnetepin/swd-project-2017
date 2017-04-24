@@ -13,11 +13,15 @@
           <ion-list inset>
 
             <ion-item>
-              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.login" required></ion-input>
+              <ion-input type="text" placeholder="Username" name="login" [(ngModel)]="registerCredentials.login" required></ion-input>
             </ion-item>
 
             <ion-item>
               <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" placeholder="Name" name="name" [(ngModel)]="registerCredentials.name" required></ion-input>
             </ion-item>
 
           </ion-list>

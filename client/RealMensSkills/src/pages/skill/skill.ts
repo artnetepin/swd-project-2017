@@ -39,7 +39,7 @@ export class SkillPage {
     this.http.post('https://sheltered-savannah-33614.herokuapp.com/complete_skill/', {userID: userID, skillID: skillID}).map(res => res.json()).subscribe(
       result => {
         let completion = (result.done);
-        if (completion) {alert('Skill completed');} else {alert('ERROR FUCK OFF');}
+        if (completion) {alert('Skill completed');} else {alert('Skill is already completed');}
       }
     );
   }
