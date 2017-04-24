@@ -21,9 +21,9 @@ export class EditProfilePage {
   }
 
   public logout() {
-    this.auth.logout().subscribe(succ => {
-        this.nav.setRoot(LoginPage)
-    });
+    // this.auth.logout().subscribe(succ => {
+    //     this.nav.setRoot(LoginPage)
+    // });
   }
 
 }

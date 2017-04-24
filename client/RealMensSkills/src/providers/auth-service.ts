@@ -1,19 +1,17 @@
 import { Http, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+// import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 export class User {
-  firstname: string;
-  lastname: string;
-  email: string;
-  // id: any;
+  id: any;
+  username: any;
+  email: any;
 
-  constructor(firstname: string, lastname: string, email: string) {
-    this.firstname = firstname;
-    this.lastname = lastname;
-    this.email = email;
-    // this.id = id;
+  constructor(id: number) {
+    this.id = id;
+    // this.username = username;
+    // this.email = email;
   }
 
 }
@@ -21,31 +19,44 @@ export class User {
 @Injectable()
 export class AuthService {
   currentUser: User;
+  // user: any;
+
+  constructor (public http: Http){
+    this.http = http;
+  }
 
   public login(credentials) {
-    if (credentials.email === null || credentials.password === null) {
-      return Observable.throw("Please insert credentials");
-    } else {
-      return Observable.create(observer => {
+    // if (credentials.login === null || credentials.password === null) {
+    //   return Observable.throw("Please insert credentials");
+    // } else {
+    //   return Observable.create(observer => {
+    //     // this.http.post('https://sheltered-savannah-33614.herokuapp.com/login', JSON.stringify(credentials)).map((res:Response) => this.user = res.json());
+    //     let access = (this.user);
+    //     this.currentUser = new User(this.user.id);
+    //     observer.next(access);
+    //     observer.complete();
+    //   });
+    // }
+    return this.http.post('https://sheltered-savannah-33614.herokuapp.com/login', JSON.stringify({login: credentials.login, password: credentials.password}))
+                    .map((response: Response) => {
+                      let user  = response.json();
+                      if (user && user.id) {
+                        this.currentUser = user;
+                      }
+                    })
 
-        let access = (credentials.password === "pass" && credentials.email === "email");
-        this.currentUser = new User('Valerka', 'Leontiev', 'valerka@gmail.com');
-        observer.next(access);
-        observer.complete();
-      });
-    }
   }
 
   public register(credentials) {
-    if (credentials.email === null || credentials.password === null) {
-      return Observable.throw("Please insert credentials");
-    } else {
-      // At this point store the credentials to your backend!
-      return Observable.create(observer => {
-        observer.next(true);
-        observer.complete();
-      });
-    }
+    // if (credentials.login === null || credentials.password === null) {
+    //   return Observable.throw("Please insert credentials");
+    // } else {
+    //   // At this point store the credentials to your backend!
+    //   return Observable.create(observer => {
+    //     observer.next(true);
+    //     observer.complete();
+    //   });
+    // }
   }
 
   public getUserInfo() : User {
@@ -53,10 +64,10 @@ export class AuthService {
   }
 
   public logout() {
-    return Observable.create(observer => {
-      this.currentUser = null;
-      observer.next(true);
-      observer.complete();
-    });
+    // return Observable.create(observer => {
+    //   this.currentUser = null;
+    //   observer.next(true);
+    //   observer.complete();
+    // });
   }
 }

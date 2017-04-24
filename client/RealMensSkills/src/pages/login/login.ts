@@ -10,7 +10,7 @@ import { ProfilePage } from '../profile/profile';
 })
 export class LoginPage {
   loading: Loading;
-  registerCredentials = {email: '', password: ''};
+  registerCredentials = {login: null as string, password: null as string};
 
   constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) {}
 
@@ -20,7 +20,8 @@ export class LoginPage {
 
   public login() {
     this.showLoading()
-    this.auth.login(this.registerCredentials).subscribe(allowed => {
+    this.auth.login(this.registerCredentials)
+    .subscribe(allowed => {
       if (allowed) {
         setTimeout(() => {
         this.loading.dismiss();
@@ -35,23 +36,23 @@ export class LoginPage {
     });
   }
 
-  showLoading() {
-    this.loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
-    this.loading.present();
-  }
-
-  showError(text) {
-    setTimeout(() => {
-      this.loading.dismiss();
-    });
-
-    let alert = this.alertCtrl.create({
-      title: 'Fail',
-      subTitle: text,
-      buttons: ['OK']
-    });
-    alert.present(prompt);
-  }
+  // showLoading() {
+  //   this.loading = this.loadingCtrl.create({
+  //     content: 'Please wait...'
+  //   });
+  //   this.loading.present();
+  // }
+  //
+  // showError(text) {
+  //   setTimeout(() => {
+  //     this.loading.dismiss();
+  //   });
+  //
+  //   let alert = this.alertCtrl.create({
+  //     title: 'Fail',
+  //     subTitle: text,
+  //     buttons: ['OK']
+  //   });
+  //   alert.present(prompt);
+  // }
 }

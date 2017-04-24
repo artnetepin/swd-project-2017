@@ -23,8 +23,9 @@ export class ProfilePage {
 
   constructor(private nav: NavController, private auth: AuthService) {
     // GET INFO FROM LOGGED IN USER
-    // let info = this.auth.getUserInfo();
-    // this.username = info.name;
+    let info = this.auth.getUserInfo();
+
+    this.username = info.id;
     // this.email = info.email;
     this.skillCount = 12;
     this.achievementCount = 2;

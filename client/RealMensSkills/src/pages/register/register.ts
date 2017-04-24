@@ -8,22 +8,22 @@ import { AuthService } from '../../providers/auth-service';
 })
 export class RegisterPage {
   createSuccess = false;
-  registerCredentials = {email: '', password: ''};
+  registerCredentials = {login: '', password: ''};
 
   constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController) {}
 
   public register() {
-    this.auth.register(this.registerCredentials).subscribe(success => {
-      if (success) {
-        this.createSuccess = true;
-          this.showPopup("Success", "Account created.");
-      } else {
-        this.showPopup("Error", "Problem creating account.");
-      }
-    },
-    error => {
-      this.showPopup("Error", error);
-    });
+    // this.auth.register(this.registerCredentials).subscribe(success => {
+    //   if (success) {
+    //     this.createSuccess = true;
+    //       this.showPopup("Success", "Account created.");
+    //   } else {
+    //     this.showPopup("Error", "Problem creating account.");
+    //   }
+    // },
+    // error => {
+    //   this.showPopup("Error", error);
+    // });
   }
 
   showPopup(title, text) {
