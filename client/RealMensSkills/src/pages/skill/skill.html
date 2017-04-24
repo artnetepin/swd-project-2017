@@ -11,8 +11,18 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <img src="{{skillImage}}" alt="">
+      <img src="{{skillImage}}">
     </ion-row>
+    <ion-row *ngFor="let step of steps">
+      <ion-col>
+        <img src="{{step.photo_url}}">
+      </ion-col>
+      <ion-col>
+        <h2>{{step.heading}}</h2>
+        <p>{{step.description}}</p>
+      </ion-col>
+    </ion-row>
+    <button ion-button color="secondary" (click)="completeSkill(userID, skillID)">Complete skill</button>
   </ion-grid>
 
 </ion-content>

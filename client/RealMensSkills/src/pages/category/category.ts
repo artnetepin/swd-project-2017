@@ -11,24 +11,22 @@ import {SkillPage} from '../skill/skill';
 })
 export class CategoryPage {
 
-  pageID: any;
+  categoryID: any;
   categoryImage: any;
   categoryName: any;
   category: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-    // this.category.categoryName = 'Category';
-    // this.category.categoryImage = 'https://static.webshopapp.com/shops/035417/files/011178634/valera-logo.jpg';
 
-    this.pageID = navParams.get("pageID");
+    this.categoryID = navParams.get("categoryID");
     this.categoryName = navParams.get("name");
     this.categoryImage = navParams.get("image_url");
 
-    http.get('https://sheltered-savannah-33614.herokuapp.com/skills/' + this.pageID).subscribe((res:Response) => this.category = res.json());
+    http.get('https://sheltered-savannah-33614.herokuapp.com/skills/' + this.categoryID).subscribe((res:Response) => this.category = res.json());
   }
 
   public goToSkill(id, name, image_url){
-    this.navCtrl.push(SkillPage, {pageID: id, name: name, image_url: image_url});
+    this.navCtrl.push(SkillPage, {skillID: id, name: name, image_url: image_url});
   }
 
 }

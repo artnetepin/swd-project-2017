@@ -20,7 +20,7 @@ export class CategoriesPage {
   }
 
   public goToCategory(id, name, image_url) {
-    this.navCtrl.push(CategoryPage, {pageID: id, name: name, image_url: image_url});
+    this.navCtrl.push(CategoryPage, {categoryID: id, name: name, image_url: image_url});
   }
 
   @ViewChild(Content) content: Content;

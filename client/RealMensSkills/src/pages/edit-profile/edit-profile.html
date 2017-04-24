@@ -9,7 +9,7 @@
 
 <ion-content class="no-scroll">
   <div class="text-center">
-    <img class="w-50" src="{{user.profileImage}}">
+    <img class="w-50" src="{{user.photo_url}}">
     <button class="w-50">
       Upload picture
     </button>
@@ -17,23 +17,13 @@
   <ion-list class="w-50 mx-auto mb-1">
 
     <ion-item class="pl-0">
-      <ion-label stacked>Firstname</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item class="pl-0">
-      <ion-label stacked>Lastname</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label stacked>Name</ion-label>
+      <ion-input type="text" placeholder="{{user.name}}"></ion-input>
     </ion-item>
 
     <ion-item class="pl-0">
       <ion-label stacked>Username</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item class="pl-0">
-      <ion-label stacked>Email</ion-label>
-      <ion-input type="email"></ion-input>
+      <ion-input type="text" placeholder="{{user.login}}"></ion-input>
     </ion-item>
 
   </ion-list>
