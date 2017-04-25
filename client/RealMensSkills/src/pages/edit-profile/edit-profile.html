@@ -10,11 +10,11 @@
 <ion-content class="no-scroll">
   <div class="mt-1 text-center">
     <img class="w-50" src="{{user.photo_url}}">
-    <button class="w-50 button-default">
+    <button class="w-50 button-default py-1">
       Upload picture
     </button>
   </div>
-  <ion-list class="w-50 mx-auto mb-1">
+  <ion-list class="w-50 mx-auto mb-1 py-1">
 
     <ion-item class="pl-0">
       <ion-label stacked>Name</ion-label>
@@ -28,17 +28,17 @@
 
   </ion-list>
   <div class="text-center">
-    <button class="w-50 button-default" type="submit">
-      Save updates
+    <button class="w-50 button-default py-1 mb-1" type="submit">
+      <ion-icon name="checkmark-circle"></ion-icon> Save updates
     </button>
-    <button class="w-50 button-default">
-      Change password
+    <button class="w-50 button-default py-1 mb-1">
+      <ion-icon name="cog"></ion-icon> Change password
     </button>
-    <button class="w-50 button-default">
-      Delete profile
+    <button class="w-50 button-default py-1 mb-1">
+      <ion-icon  name="close-circle"></ion-icon> Delete profile
     </button>
-    <button class="w-50 button-default" (click)="logout()">
-      Logout
+    <button class="w-50 button-default py-1 mb-1" (click)="logout()">
+      <ion-icon name="log-out"></ion-icon> Logout
     </button>
   </div>
 

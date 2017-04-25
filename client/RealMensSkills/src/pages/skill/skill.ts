@@ -5,7 +5,7 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { AuthService } from '../../providers/auth-service';
 
-import { ProfilePage } from '../profile/profile';
+// import { ProfilePage } from '../profile/profile';
 
 
 @Component({
@@ -43,10 +43,6 @@ export class SkillPage {
     this.http.post('https://sheltered-savannah-33614.herokuapp.com/complete_skill/', {userID: userID, skillID: skillID}).map(res => res.json()).subscribe(
       result => {
         let completion = (result.done);
-        let alert = this.alertCtrl.create({
-          title: 'Success',
-          subTitle: 'Skill completed'
-        });
         if (completion) {
           this.success = true;
           this.showPopup('Success', 'Skill completed');
